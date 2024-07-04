@@ -2,20 +2,11 @@
 {% block content %}
     <h1>Home</h1>
     {% if request.user.is_authenticated %}
-    <p>it is</p>
-        {% comment %} <h5>{{ request.user.username }}</h5>
-        <a href="{% url 'accounts:logout' %}">Logout</a>
-        {% if request.user.is_superuser %}
-            <div>
-                <a href="{% url 'room:add-room' %}">Add Room</a>
-            </div>
-            {#        {% else %}#}
-        {% endif %}
-        <div>
-            <a href="{% url 'room:available_rooms' %}">Available Room</a>
-        </div> {% endcomment %}
+        <h5>{{ request.user.username }}</h5>
+        <a href="{% url 'logout' %}">Logout</a>
+        <a href="{% url 'book-list' %}">Books</a>
+        
     {% else %}
-    <p>not</p>
         {% comment %} <div>
             <a href="{% url 'accounts:register' %}">Register</a>
         </div> {% endcomment %}
